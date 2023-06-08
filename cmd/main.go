@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"ride_share/pkg"
 	"ride_share/pkg/middlewares"
 	"ride_share/pkg/routes"
 
@@ -18,6 +19,7 @@ func main() {
 
 	// Custom Middleware
 	app.Use(middlewares.AuthMiddleware())
+	pkg.InitDatabase()
 
 	// Routes
 	routes.SetupRoutes(app)
